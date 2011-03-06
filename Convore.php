@@ -67,14 +67,27 @@
 			
 		}
 		
+		function leaveGroup($group_id) {
+			$params = array('group_id' => sprintf('%d', $group_id));
+			return $this->methodCall('/groups/'.$group_id.'/leave.json', 'post', $params);
+			
+		}
+		
+		function getGroupMembersOnline($group_id) {
+			return $this->methodCall('/groups/'.$group_id.'/online.json', 'get');
+		}
+		
 		
 		function methodCall($convore_method, $action, $params = null, $auth_required = true) {
 			$ch = curl_init();
 			$request = sprintf($this->base_url.'%s', $convore_method);
 			
-			if($action == 'get' && isset($params)) {
+			if($action == 'get') {
 				curl_setopt($ch, CURLOPT_HTTPGET, true);
-				$request = $request.'?'.http_build_query($params);
+				
+				if(isset($params)) {
+					$request = $request.'?'.http_build_query($params);
+				}
 			}
 			
 			curl_setopt($ch, CURLOPT_URL, $request);
