@@ -4,7 +4,7 @@ Copyright (c) 2011 Jayson J. Phillips, Chronium Labs LLC
 
 
 ##ABOUT CONVORE-PHP
-This class is a simple API wrapper to expose Convore (www.convore.com) methods to a common Convore object. This class has no external dependencies and is aimed to be a lightweight drop-in for use in any project or frameworks. It is licensed under the MIT License which follows below.
+This class is a simple API wrapper to expose Convore (www.convore.com) methods. This class has no external dependencies and is aimed to be a lightweight drop-in for use in any project or frameworks. It is licensed under the MIT License which follows below.
 
 ###MIT LICENSE
 
@@ -15,6 +15,6 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-_The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+_The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software._
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
