@@ -2,9 +2,9 @@
 	
 	class Convore {
 		
-		var $credentials;
-		var $base_url;
-		var $http_response;
+		private $credentials;
+		private $base_url;
+		private $http_response;
 		
 		public function __construct($user, $pass) {
 			$this->credentials = vsprintf('%s:%s', array($user, $pass));
