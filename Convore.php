@@ -1,41 +1,72 @@
 <?php
 	
+	/**
+	*
+	* @package Convore-PHP
+	* @version $Id$
+	* @copyright (c) 2011 Chronium Labs LLC
+	* @license http://opensource.org/licenses/mit-license.php MIT License
+	*
+	*/
+	
 	class Convore {
 		
 		private $credentials;
 		private $base_url;
-		private $http_response;
 		
-		public function __construct() {
+		/**
+		 * Constructor method for Convore
+		 * @param String $user Username
+		 * @param String $pass Password
+		 **/
+		public function __construct($user, $pass) {
+			$this->credentials = vsprintf('%s:%s', array($user, $pass));
 			$this->base_url = "https://convore.com/api";
 		}
 		
-		function setCredentials($user, $pass) {
-			$this->credentials = vsprintf('%s:%s', array($user, $pass));
-		}
-		
-		function getCredentials() {
-			return $this->credentials;
-		}
-		
+		/**
+		 * Verify your account credentials
+		 * @return Object json
+		 **/
 		function verifyAccount() {
 			return $this->methodCall('/account/verify.json', 'get');
 		}
+		
+		/**
+		 * Mark all unread topic messages as read
+		 * @return Object json
+		 **/
 		
 		function markAllRead() {
 			return $this->methodCall('/account/mark_read.json', 'get');
 		}
 		
-		function usersOnline() {
+		/**
+		 * Get a list of all users currently online
+		 * @return Object json
+		 **/
+		function getUsersCurrentlyOnline() {
 			return $this->methodCall('/account/online.json', 'get');
-		}
-		
-		function getAllGroups() {
-			return $this->methodCall('/groups.json', 'get');
 		}
 		
 		// Groups methods
 		
+		/**
+		 * Get all groups user is currently a part of
+		 * @return Object json
+		 **/
+		function getAllGroups() {
+			return $this->methodCall('/groups.json', 'get');
+		}
+		
+		/**
+		 * Create a group for authenticated user
+		 * @param String $name Name of group
+		 * @param String $kind either public or private
+		 * @param String $desc Optional description for group (defaults to null)
+		 * @param String $slug Optional custom slug for created group (defaults to null) 
+		 * @return Object json
+		 **/		
 		function createGroup($name, $kind, $desc = null, $slug = null) {
 			
 			$params = array('name' => $name, 
