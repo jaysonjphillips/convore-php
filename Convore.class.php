@@ -2,52 +2,52 @@
 	
 	class Convore {
 		
-		private $credentials;
-		private $url_base;
+		var $credentials;
+		var $base_url;
+		var $http_response;
 		
 		public function __construct($user, $pass) {
-			$this->credentials = sprintf('%s:%s', $user, $pass);
-			$this->url_base = "https://convore.com/api/";
+			$this->credentials = vsprintf('%s:%s', array($user, $pass));
+			$this->base_url = "https://convore.com/api";
 		}
 		
-		public function sendRequest($url, $action) {
-			// extract curl request
-		}
-		
-		public function verifyAccount() {
+		function verifyAccount() {
 			return $this->methodCall('/account/verify.json', 'get');
 		}
 		
-		public function markAllRead() {
+		function markAllRead() {
 			return $this->methodCall('/account/mark_read.json', 'get');
 		}
 		
-		public function usersOnline() {
+		function usersOnline() {
 			return $this->methodCall('/account/online.json', 'get');
 		}
 		
-		private function methodCall($convore_method, $action, $auth_required = true, $params) {
+		function getGroups() {
+			return $this->methodCall('/groups.json', 'get');
+		}
+		
+		function methodCall($convore_method, $action, $auth_required = true, $params = null) {
 			$ch = curl_init();
+			$request = sprintf($this->base_url.'%s', $convore_method);
 			
-			curl_setopt($ch, CURLOPT_URL, sprintf($this->base_url.'%s', $convore_method));
+			curl_setopt($ch, CURLOPT_URL, $request);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_USERPWD, $this->credentials);
 			
-			if ($auth_required) {
-				curl_setopt($ch, CURLOPT_USERPWD, $this->credentials);
-			}
-			
-			if ($action == 'post' && !is_null($params)) {
-				curl_setopt($ch, CURLOPT_POST, true);
+			if ($action == 'post') {
+				curl_setopt($ch, CURLOPT_HTTPPOST, 1);
 		    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
 			}
 			
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-				$convore_data = curl_exec($ch);
-				
-				$this->http_response = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-				curl_close($ch);
-				return json_decode($convore_data);
+			if($action == 'get') {
+				curl_setopt($ch, CURLOPT_HTTPGET, true);
 			}
+			
+				$convore_data = curl_exec($ch);				
+				$this->http_response = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+				return json_decode($convore_data);
+				
 		}		
 	}
 	
