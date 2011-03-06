@@ -50,12 +50,6 @@
 				return $this->methodCall('/groups/'.$group_id.'.json', 'get');
 		}
 		
-		function getGroupMembers($group_id, $filter = null) {
-			$params = array('filter' => sprintf('%s', $filter));
-			return $this->methodCall('/groups/'.$group_id.'/members.json', 'get', $params);
-			
-		}
-		
 		function joinGroup($group_id) {
 			$params = array('group_id' => sprintf('%d', $group_id));
 			return $this->methodCall('/groups/'.$group_id.'/join.json', 'post', $params);
@@ -69,12 +63,23 @@
 		
 		function leaveGroup($group_id) {
 			$params = array('group_id' => sprintf('%d', $group_id));
-			return $this->methodCall('/groups/'.$group_id.'/leave.json', 'post', $params);
+			return $this->methodCall('/groups/'.$params['group_id'].'/leave.json', 'post', $params);
 			
 		}
 		
-		function getGroupMembersOnline($group_id) {
+		function getMembersByGroup($group_id, $filter = null) {
+			$params = array('filter' => sprintf('%s', $filter));
+			return $this->methodCall('/groups/'.$group_id.'/members.json', 'get', $params);
+			
+		}
+		
+		function getMembersOnlineByGroup($group_id) {
 			return $this->methodCall('/groups/'.$group_id.'/online.json', 'get');
+		}
+		
+		// Groups - Topics
+		function getToipcsByGroup($group_id) {
+			return $this->methodCall('/groups/'.$params['group_id'].'/topics.json');
 		}
 		
 		
