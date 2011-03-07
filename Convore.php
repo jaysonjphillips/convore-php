@@ -109,7 +109,7 @@
 		}
 		
 		// Groups - Topics
-		function getToipcsByGroup($group_id) {
+		function getTopicsByGroup($group_id) {
 			return $this->methodCall('/groups/'.$params['group_id'].'/topics.json');
 		}
 		
