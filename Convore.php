@@ -77,40 +77,77 @@
 			return $this->methodCall('/groups/create.json', 'post', $params);
 		}
 		
+		/**
+		 * Retrieve particular group
+		 * @param Integer $group_id
+		 * @return Object json
+		 **/
 		function getGroup($group_id) {
 				return $this->methodCall('/groups/'.$group_id.'.json', 'get');
 		}
 		
+		/**
+		 * Join a particular group 
+		 * @param Integer $group_id 
+		 * @return Object json
+		 **/
 		function joinGroup($group_id) {
 			$params = array('group_id' => sprintf('%d', $group_id));
 			return $this->methodCall('/groups/'.$group_id.'/join.json', 'post', $params);
 		}
 		
+		/**
+		 * Join a private group
+		 * @param Integer $group_id
+		 * @return Object json
+		 **/
 		function joinPrivateGroup($group_id) {
 			$params = array('group_id' => sprintf('%d', $group_id));
 			return $this->methodCall('/groups/'.$group_id.'/request.json', 'post', $params);
 			
 		}
 		
+		/**
+		 * Leave a particular group
+		 * @param Integer $group_id 
+		 * @return Object json
+		 **/
 		function leaveGroup($group_id) {
 			$params = array('group_id' => sprintf('%d', $group_id));
 			return $this->methodCall('/groups/'.$params['group_id'].'/leave.json', 'post', $params);
 			
 		}
 		
+		/**
+		 * Retrieve the members of a particular group
+		 * @param Integer $group_id 
+		 * @param String $filter (optional parameter. 'admin' filters member list for admins of the group)
+		 * @return Object json
+		 **/
 		function getMembersByGroup($group_id, $filter = null) {
 			$params = array('filter' => sprintf('%s', $filter));
 			return $this->methodCall('/groups/'.$group_id.'/members.json', 'get', $params);
 			
 		}
 		
+		/**
+		 * Retrieve the members of a group that's currently online
+		 * @param Integer $group_id 
+		 * @return Object json
+		 **/
 		function getMembersOnlineByGroup($group_id) {
 			return $this->methodCall('/groups/'.$group_id.'/online.json', 'get');
 		}
 		
 		// Groups - Topics
+		
+		/**
+		 * Retrieve the topics for a particular group		 
+		 * @param Integer $group_id 
+		 * @return Object json
+		 **/
 		function getTopicsByGroup($group_id) {
-			return $this->methodCall('/groups/'.$params['group_id'].'/topics.json');
+			return $this->methodCall('/groups/'.$group_id.'/topics.json');
 		}
 		
 		
