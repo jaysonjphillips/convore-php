@@ -166,14 +166,14 @@
 		 * @return Object json
 		 **/
 		function createTopic($group_id, $name) {
-			$params['name'] = $name;
+			$params['name'] = sprintf('%s', $name);
 			return $this->methodCall('/groups/'.$group_id.'/topics/create.json', 'post', $params);
 		}
 		
 		// Topics
 				
 		/**
-		 * Retrieve details for a given topic		 
+		 * Get detailed information about the topic.	 
 		 * @param Integer $topic_id 
 		 * @return Object json
 		 **/
@@ -182,31 +182,14 @@
 		}
 		
 		/**
-		 * Delete a given topic		 
-		 * @param Integer $topic_id 
-		 * @return Object json
-		 **/
-		function deleteTopic($topic_id) {
-			return $this->methodCall('/topics/'.$topic_id.'/delete.json', 'post');
-		}
-		
-		/**
-		 * Mark messages read for a given topic		 
-		 * @param Integer $topic_id 
-		 * @return Object json
-		 **/
-		function markReadByTopicId($topic_id) {
-			return $this->methodCall('/topics/'.$topic_id.'/mark_read.json', 'post');
-		}
-		
-		/**
-		 * Retrieve messages for a given topic		 
+		 * Get the latest messages in a topic. Use the optional until_id parameter to paginate and get prior messages. 
+		 * Set the optional mark_read parameter to false to leave the messages as unread.		 
 		 * @param Integer $topic_id 
 		 * @param Integer $until_id 
 		 * @param Boolean $mark_read
 		 * @return Object json
 		 **/
-		function getMessagesByTopicId($topic_id, $until_id = null, $mark_read = false) {
+		function getMessagesByTopic($topic_id, $until_id = null, $mark_read = false) {
 			$params = array(
 				'until_id' => $until_id,
 				'mark_read' => $mark_read
@@ -215,20 +198,38 @@
 		}
 		
 		/**
-		 * Create a new message	 
+		 * Post a new message	 
 		 * @param Integer $topic_id 
 		 * @param String $message
 		 * @return Object json
 		 **/
 		function createMessage($topic_id, $message) {
-			$params['message'] = vsprintf('%s', $message);
+			$params['message'] = sprintf('%s', $message);
 			return $this->methodCall('/topics/'.$topic_id.'/messages/create.json', 'post', $params);
+		}
+		
+		/**
+		 * Delete a topic. You must be the creator of the topic or a group admin in order to delete the topic	 
+		 * @param Integer $topic_id 
+		 * @return Object json
+		 **/
+		function deleteTopic($topic_id) {
+			return $this->methodCall('/topics/'.$topic_id.'/delete.json', 'post');
+		}
+		
+		/**
+		 * Mark all messages in a topic as read.	 
+		 * @param Integer $topic_id 
+		 * @return Object json
+		 **/
+		function markReadByTopic($topic_id) {
+			return $this->methodCall('/topics/'.$topic_id.'/mark_read.json', 'post');
 		}
 		
 		//  Messages
 		
 		/**
-		 * Star message	 
+		 * Star a message. If the message has already been starred by this user, this endpoint will then unstar the message
 		 * @param Integer $message_id
 		 * @return Object json
 		 **/
@@ -237,7 +238,7 @@
 		}
 		
 		/**
-		 * Delete message	 
+		 * Delete a message. You must be the creator of the message or a group admin in order to delete the message.
 		 * @param Integer $message_id
 		 * @return Object json
 		 **/
@@ -248,7 +249,7 @@
 		// Users
 		
 		/**
-		 * retrieve user details 
+		 * Get detailed information about the user.
 		 * @param Integer $user_id
 		 * @return Object json
 		 **/
@@ -256,6 +257,57 @@
 			return $this->methodCall('/users/'.$user_id.'.json', 'get');
 		}
 		
+		//  Group Discovery
+		
+		/**
+		 * Get list of all groups authenticated user is a member of
+		 * @return Object json
+		 **/
+		function discoverGroups() {
+			return $this->methodCall('/groups/discover/friend.json', 'get');
+		}
+		
+		/**
+		 * Get list of all group categories
+		 * @return Object json
+		 **/
+		function discoverGroupCategories() {
+			return $this->methodCall('/groups/discover/category.json', 'get');
+		}
+		
+		/**
+		 * Gets a list of groups in the given category.
+		 * @param String $slug
+		 * @return Object json
+		 **/
+		function discoverGroupsByCategory($slug) {
+			$category_slug = sprintf('%s', $slug);
+			return $this->methodCall('/groups/discover/category/'.$category_slug.'.json', 'get');
+		}
+		
+		/**
+		 * Gets a list of groups matching the given search.
+		 * Note: The required q parameter should be the term to be searched for.
+		 * @param String $q
+		 * @return Object json
+		 **/
+		function discoverGroupsByQuery($q) {
+			$params = array(
+				'q' => sprintf('%s', $q);
+			);
+			return $this->methodCall('groups/discover/explore/search.json', 'get', $params);
+		}
+		
+		/**
+		 * Gets a list of all groups, sorted either by popularity, recency, or alphabetically.
+		 * Note: The required sort parameter should be set to one of popular, recent, or alphabetical.
+		 * @param String $sort_by
+		 * @return Object json
+		 **/
+		function discoverGroupsBySort($sort_by) {
+			$sort = sprintf('%s', $sort_by);
+			return $this->methodCall('groups/discover/explore/'.$sort.'.json', 'get');
+		}
 		
 		
 		function methodCall($convore_method, $action, $params = null, $auth_required = true) {
