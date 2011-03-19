@@ -1,17 +1,27 @@
 <?php
-	
-	/**
-	*
-	* @package Convore-PHP
-	* @version $Id$
+ /**
+  * @package ChroniumLabs
 	* @copyright (c) 2011 Chronium Labs LLC
 	* @license http://opensource.org/licenses/mit-license.php MIT License
 	*
+	*/	
+ /**
+	* The Convore Class 
+	* @package ChroniumLabs.convore-php
 	*/
-	
-	class Convore {
-		
+	class Convore {				
+		/**
+		 * Private variable to store credentials
+		 * @var Private $credentials
+		 **/
+			
 		private $credentials;
+		
+		/**
+		 * Private var for base api url (to support future versioning)
+		 * @var Private $base_url
+		 **/
+
 		private $base_url;
 		
 		/**
@@ -293,7 +303,7 @@
 		 **/
 		function discoverGroupsByQuery($q) {
 			$params = array(
-				'q' => sprintf('%s', $q);
+				'q' => sprintf('%s', $q)
 			);
 			return $this->methodCall('groups/discover/explore/search.json', 'get', $params);
 		}

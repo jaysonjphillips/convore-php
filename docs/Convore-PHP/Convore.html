@@ -1,0 +1,1133 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Convore</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Convore</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">version:</span> $Id$</li>
+				<li><span class="field">copyright:</span> (c) 2011 Chronium Labs LLC</li>
+				<li><span class="field">license:</span> <a href="http://opensource.org/licenses/mit-license.php">MIT License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Convore.php.html">/Convore.php</a> (line <span class="field">12</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																								<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Convore</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type">String</span>&nbsp;<span class="var-name">$user</span>, <span class="var-type">String</span>&nbsp;<span class="var-name">$pass</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#createGroup" title="details" class="method-name">createGroup</a>
+											(<span class="var-type">String</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">String</span>&nbsp;<span class="var-name">$kind</span>, [<span class="var-type">String</span>&nbsp;<span class="var-name">$desc</span> = <span class="var-default">null</span>], [<span class="var-type">String</span>&nbsp;<span class="var-name">$slug</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#createMessage" title="details" class="method-name">createMessage</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$topic_id</span>, <span class="var-type">String</span>&nbsp;<span class="var-name">$message</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#createTopic" title="details" class="method-name">createTopic</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>, <span class="var-type">String</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#deleteMessage" title="details" class="method-name">deleteMessage</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$message_id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#deleteTopic" title="details" class="method-name">deleteTopic</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$topic_id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#discoverGroupCategories" title="details" class="method-name">discoverGroupCategories</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#discoverGroups" title="details" class="method-name">discoverGroups</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#discoverGroupsByCategory" title="details" class="method-name">discoverGroupsByCategory</a>
+											(<span class="var-type">String</span>&nbsp;<span class="var-name">$slug</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#discoverGroupsByQuery" title="details" class="method-name">discoverGroupsByQuery</a>
+											(<span class="var-type">String</span>&nbsp;<span class="var-name">$q</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#discoverGroupsBySort" title="details" class="method-name">discoverGroupsBySort</a>
+											(<span class="var-type">String</span>&nbsp;<span class="var-name">$sort_by</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#getAllGroups" title="details" class="method-name">getAllGroups</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#getGroupById" title="details" class="method-name">getGroupById</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#getMembersByGroup" title="details" class="method-name">getMembersByGroup</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>, [<span class="var-type">String</span>&nbsp;<span class="var-name">$filter</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#getMembersOnlineByGroup" title="details" class="method-name">getMembersOnlineByGroup</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#getMessagesByTopic" title="details" class="method-name">getMessagesByTopic</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$topic_id</span>, [<span class="var-type">Integer</span>&nbsp;<span class="var-name">$until_id</span> = <span class="var-default">null</span>], [<span class="var-type">Boolean</span>&nbsp;<span class="var-name">$mark_read</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#getTopic" title="details" class="method-name">getTopic</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$topic_id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#getTopicsByGroup" title="details" class="method-name">getTopicsByGroup</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$until</span> = <span class="var-default">null</span>], <span class="var-type">Integer</span>&nbsp;<span class="var-name">$until_id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#getUser" title="details" class="method-name">getUser</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$user_id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#getUsersCurrentlyOnline" title="details" class="method-name">getUsersCurrentlyOnline</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#joinGroup" title="details" class="method-name">joinGroup</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#joinPrivateGroup" title="details" class="method-name">joinPrivateGroup</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#leaveGroup" title="details" class="method-name">leaveGroup</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#markAllRead" title="details" class="method-name">markAllRead</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#markReadByGroup" title="details" class="method-name">markReadByGroup</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#markReadByTopic" title="details" class="method-name">markReadByTopic</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$topic_id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#methodCall" title="details" class="method-name">methodCall</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$convore_method</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$action</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$auth_required</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#starMessage" title="details" class="method-name">starMessage</a>
+											(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$message_id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">Object</span>
+										<a href="#verifyAccount" title="details" class="method-name">verifyAccount</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+													<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">22</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor method for Convore</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Convore</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type">String</span>&nbsp;<span class="var-name">$user</span>, <span class="var-type">String</span>&nbsp;<span class="var-name">$pass</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$user</span><span class="var-description">: Username</span>			</li>
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$pass</span><span class="var-description">: Password</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateGroup" id="createGroup"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">createGroup</span> (line <span class="line-number">70</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create a group for authenticated user</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			createGroup
+		</span>
+					(<span class="var-type">String</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">String</span>&nbsp;<span class="var-name">$kind</span>, [<span class="var-type">String</span>&nbsp;<span class="var-name">$desc</span> = <span class="var-default">null</span>], [<span class="var-type">String</span>&nbsp;<span class="var-name">$slug</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$name</span><span class="var-description">: Name of group</span>			</li>
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$kind</span><span class="var-description">: either public or private</span>			</li>
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$desc</span><span class="var-description">: Optional description for group (defaults to null)</span>			</li>
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$slug</span><span class="var-description">: Optional custom slug for created group (defaults to null)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateMessage" id="createMessage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">createMessage</span> (line <span class="line-number">206</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Post a new message</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			createMessage
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$topic_id</span>, <span class="var-type">String</span>&nbsp;<span class="var-name">$message</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$topic_id</span>			</li>
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$message</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateTopic" id="createTopic"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">createTopic</span> (line <span class="line-number">168</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create a new topic for a particular group</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			createTopic
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>, <span class="var-type">String</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$group_id</span>			</li>
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddeleteMessage" id="deleteMessage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">deleteMessage</span> (line <span class="line-number">245</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Delete a message. You must be the creator of the message or a group admin in order to delete the message.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			deleteMessage
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$message_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$message_id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddeleteTopic" id="deleteTopic"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">deleteTopic</span> (line <span class="line-number">216</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Delete a topic. You must be the creator of the topic or a group admin in order to delete the topic</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			deleteTopic
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$topic_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$topic_id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddiscoverGroupCategories" id="discoverGroupCategories"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">discoverGroupCategories</span> (line <span class="line-number">274</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get list of all group categories</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			discoverGroupCategories
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoddiscoverGroups" id="discoverGroups"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">discoverGroups</span> (line <span class="line-number">266</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get list of all groups authenticated user is a member of</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			discoverGroups
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoddiscoverGroupsByCategory" id="discoverGroupsByCategory"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">discoverGroupsByCategory</span> (line <span class="line-number">283</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets a list of groups in the given category.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			discoverGroupsByCategory
+		</span>
+					(<span class="var-type">String</span>&nbsp;<span class="var-name">$slug</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$slug</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddiscoverGroupsByQuery" id="discoverGroupsByQuery"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">discoverGroupsByQuery</span> (line <span class="line-number">294</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets a list of groups matching the given search.</p>
+<p class="description"><p>Note: The required q parameter should be the term to be searched for.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			discoverGroupsByQuery
+		</span>
+					(<span class="var-type">String</span>&nbsp;<span class="var-name">$q</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$q</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddiscoverGroupsBySort" id="discoverGroupsBySort"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">discoverGroupsBySort</span> (line <span class="line-number">307</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets a list of all groups, sorted either by popularity, recency, or alphabetically.</p>
+<p class="description"><p>Note: The required sort parameter should be set to one of popular, recent, or alphabetical.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			discoverGroupsBySort
+		</span>
+					(<span class="var-type">String</span>&nbsp;<span class="var-name">$sort_by</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$sort_by</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetAllGroups" id="getAllGroups"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getAllGroups</span> (line <span class="line-number">58</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get all groups user is currently a part of</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			getAllGroups
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetGroupById" id="getGroupById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getGroupById</span> (line <span class="line-number">85</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve particular group</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			getGroupById
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$group_id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMembersByGroup" id="getMembersByGroup"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getMembersByGroup</span> (line <span class="line-number">127</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the members of a particular group</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			getMembersByGroup
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>, [<span class="var-type">String</span>&nbsp;<span class="var-name">$filter</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$group_id</span>			</li>
+					<li>
+				<span class="var-type">String</span>
+				<span class="var-name">$filter</span><span class="var-description">: (optional parameter. 'admin' filters member list for admins of the group)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMembersOnlineByGroup" id="getMembersOnlineByGroup"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getMembersOnlineByGroup</span> (line <span class="line-number">138</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the members of a group that's currently online</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			getMembersOnlineByGroup
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$group_id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMessagesByTopic" id="getMessagesByTopic"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getMessagesByTopic</span> (line <span class="line-number">192</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the latest messages in a topic. Use the optional until_id parameter to paginate and get prior messages.</p>
+<p class="description"><p>Set the optional mark_read parameter to false to leave the messages as unread.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			getMessagesByTopic
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$topic_id</span>, [<span class="var-type">Integer</span>&nbsp;<span class="var-name">$until_id</span> = <span class="var-default">null</span>], [<span class="var-type">Boolean</span>&nbsp;<span class="var-name">$mark_read</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$topic_id</span>			</li>
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$until_id</span>			</li>
+					<li>
+				<span class="var-type">Boolean</span>
+				<span class="var-name">$mark_read</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTopic" id="getTopic"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getTopic</span> (line <span class="line-number">180</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get detailed information about the topic.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			getTopic
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$topic_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$topic_id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTopicsByGroup" id="getTopicsByGroup"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getTopicsByGroup</span> (line <span class="line-number">157</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the topics for a particular group</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			getTopicsByGroup
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$until</span> = <span class="var-default">null</span>], <span class="var-type">Integer</span>&nbsp;<span class="var-name">$until_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$group_id</span>			</li>
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$until_id</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$until</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetUser" id="getUser"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getUser</span> (line <span class="line-number">256</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get detailed information about the user.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			getUser
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$user_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$user_id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetUsersCurrentlyOnline" id="getUsersCurrentlyOnline"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getUsersCurrentlyOnline</span> (line <span class="line-number">48</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get a list of all users currently online</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			getUsersCurrentlyOnline
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodjoinGroup" id="joinGroup"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">joinGroup</span> (line <span class="line-number">94</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Join a particular group</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			joinGroup
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$group_id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodjoinPrivateGroup" id="joinPrivateGroup"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">joinPrivateGroup</span> (line <span class="line-number">104</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Join a private group</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			joinPrivateGroup
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$group_id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodleaveGroup" id="leaveGroup"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">leaveGroup</span> (line <span class="line-number">115</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Leave a particular group</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			leaveGroup
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$group_id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmarkAllRead" id="markAllRead"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">markAllRead</span> (line <span class="line-number">40</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Mark all unread topic messages as read</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			markAllRead
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodmarkReadByGroup" id="markReadByGroup"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">markReadByGroup</span> (line <span class="line-number">147</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Mark all messages as read for a particular group</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			markReadByGroup
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$group_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$group_id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmarkReadByTopic" id="markReadByTopic"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">markReadByTopic</span> (line <span class="line-number">225</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Mark all messages in a topic as read.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			markReadByTopic
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$topic_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$topic_id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmethodCall" id="methodCall"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">methodCall</span> (line <span class="line-number">313</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			methodCall
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$convore_method</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$action</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$auth_required</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$convore_method</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$action</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$auth_required</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodstarMessage" id="starMessage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">starMessage</span> (line <span class="line-number">236</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Star a message. If the message has already been starred by this user, this endpoint will then unstar the message</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			starMessage
+		</span>
+					(<span class="var-type">Integer</span>&nbsp;<span class="var-name">$message_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Integer</span>
+				<span class="var-name">$message_id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodverifyAccount" id="verifyAccount"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">verifyAccount</span> (line <span class="line-number">31</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Verify your account credentials</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> json</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Object</span>
+		<span class="method-name">
+			verifyAccount
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 19 Mar 2011 03:23:30 -0400 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>
