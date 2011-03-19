@@ -82,7 +82,7 @@
 		 * @param Integer $group_id
 		 * @return Object json
 		 **/
-		function getGroup($group_id) {
+		function getGroupById($group_id) {
 				return $this->methodCall('/groups/'.$group_id.'.json', 'get');
 		}
 		
@@ -139,16 +139,123 @@
 			return $this->methodCall('/groups/'.$group_id.'/online.json', 'get');
 		}
 		
-		// Groups - Topics
+		/**
+		 * Mark all messages as read for a particular group		 
+		 * @param Integer $group_id 
+		 * @return Object json
+		 **/
+		function markReadByGroup($group_id) {
+			return $this->methodCall('/groups/'.$group_id.'/mark_read.json', 'get');
+		}
 		
 		/**
 		 * Retrieve the topics for a particular group		 
 		 * @param Integer $group_id 
+		 * @param Integer $until_id
 		 * @return Object json
 		 **/
-		function getTopicsByGroup($group_id) {
-			return $this->methodCall('/groups/'.$group_id.'/topics.json');
+		function getTopicsByGroup($group_id, $until = null) {
+			$params['until_id'] = $until;
+			return $this->methodCall('/groups/'.$group_id.'/topics.json', 'get', $params);
 		}
+		
+		/**
+		 * Create a new topic for a particular group		 
+		 * @param Integer $group_id
+		 * @param String $name
+		 * @return Object json
+		 **/
+		function createTopic($group_id, $name) {
+			$params['name'] = $name;
+			return $this->methodCall('/groups/'.$group_id.'/topics/create.json', 'post', $params);
+		}
+		
+		// Topics
+				
+		/**
+		 * Retrieve details for a given topic		 
+		 * @param Integer $topic_id 
+		 * @return Object json
+		 **/
+		function getTopic($topic_id) {
+			return $this->methodCall('/topics/'.$topic_id.'.json', 'get', $params);
+		}
+		
+		/**
+		 * Delete a given topic		 
+		 * @param Integer $topic_id 
+		 * @return Object json
+		 **/
+		function deleteTopic($topic_id) {
+			return $this->methodCall('/topics/'.$topic_id.'/delete.json', 'post');
+		}
+		
+		/**
+		 * Mark messages read for a given topic		 
+		 * @param Integer $topic_id 
+		 * @return Object json
+		 **/
+		function markReadByTopicId($topic_id) {
+			return $this->methodCall('/topics/'.$topic_id.'/mark_read.json', 'post');
+		}
+		
+		/**
+		 * Retrieve messages for a given topic		 
+		 * @param Integer $topic_id 
+		 * @param Integer $until_id 
+		 * @param Boolean $mark_read
+		 * @return Object json
+		 **/
+		function getMessagesByTopicId($topic_id, $until_id = null, $mark_read = false) {
+			$params = array(
+				'until_id' => $until_id,
+				'mark_read' => $mark_read
+			);
+			return $this->methodCall('/topics/'.$topic_id.'/messages.json', 'get', $params);
+		}
+		
+		/**
+		 * Create a new message	 
+		 * @param Integer $topic_id 
+		 * @param String $message
+		 * @return Object json
+		 **/
+		function createMessage($topic_id, $message) {
+			$params['message'] = vsprintf('%s', $message);
+			return $this->methodCall('/topics/'.$topic_id.'/messages/create.json', 'post', $params);
+		}
+		
+		//  Messages
+		
+		/**
+		 * Star message	 
+		 * @param Integer $message_id
+		 * @return Object json
+		 **/
+		function starMessage($message_id) {
+			return $this->methodCall('/messages/'.$message_id.'/create.json', 'post');
+		}
+		
+		/**
+		 * Delete message	 
+		 * @param Integer $message_id
+		 * @return Object json
+		 **/
+		function deleteMessage($message_id) {
+			return $this->methodCall('/messages/'.$message_id.'/delete.json', 'post');
+		}
+		
+		// Users
+		
+		/**
+		 * retrieve user details 
+		 * @param Integer $user_id
+		 * @return Object json
+		 **/
+		function getUser($user_id) {
+			return $this->methodCall('/users/'.$user_id.'.json', 'get');
+		}
+		
 		
 		
 		function methodCall($convore_method, $action, $params = null, $auth_required = true) {
