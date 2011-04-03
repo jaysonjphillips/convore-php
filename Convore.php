@@ -244,7 +244,7 @@
 		 * @return Object json
 		 **/
 		function starMessage($message_id) {
-			return $this->methodCall('/messages/'.$message_id.'/create.json', 'post');
+			return $this->methodCall('/messages/'.$message_id.'/star.json', 'post');
 		}
 		
 		/**
