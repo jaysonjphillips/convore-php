@@ -6,6 +6,20 @@ Copyright (c) 2011 Jayson J. Phillips, Chronium Labs LLC
 ##ABOUT CONVORE-PHP
 This class is a simple API wrapper to expose Convore (www.convore.com) methods. This class has no external dependencies and is aimed to be a lightweight drop-in for use in any project or frameworks. It is licensed under the MIT License which follows below.
 
+##EXAMPLE
+
+```php
+//create
+$con = new Convore( $user, $pass );
+
+//get all groups
+//returned as a json_decode object
+$result = $con->getAllGroups();
+
+//to grab the first group in the result
+print $result->groups[0];
+```
+
 ###MIT LICENSE
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
