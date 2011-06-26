@@ -16,6 +16,9 @@ $con = new Convore( $user, $pass );
 //returned as a json_decode object
 $result = $con->getAllGroups();
 
+//check http response of last method call
+echo $con->http_response;
+
 //to grab the first group in the result
 print $result->groups[0];
 ```
