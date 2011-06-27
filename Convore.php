@@ -323,7 +323,6 @@
 		function methodCall($convore_method, $action, $params = null, $auth_required = true) {
 			$ch = curl_init();
 			$request = sprintf($this->base_url.'%s', $convore_method);
-			
 			if($action == 'get') {
 				curl_setopt($ch, CURLOPT_HTTPGET, true);
 				
@@ -333,16 +332,18 @@
 			}
 			
 			curl_setopt($ch, CURLOPT_URL, $request);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_USERPWD, $this->credentials);
 			
 			if ($action == 'post') {
 				curl_setopt($ch, CURLOPT_POST, 1);
-		    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
+		    	curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
 			}
 			
-				$convore_data = curl_exec($ch);				
+				$convore_data = curl_exec($ch);			
 				$this->http_response = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+				echo 'Curl error: ' . curl_error($ch);
 				return json_decode($convore_data);
 				
 		}		
