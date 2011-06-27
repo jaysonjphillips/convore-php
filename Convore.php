@@ -343,7 +343,6 @@
 			
 				$convore_data = curl_exec($ch);			
 				$this->http_response = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-				echo 'Curl error: ' . curl_error($ch);
 				return json_decode($convore_data);
 				
 		}		
