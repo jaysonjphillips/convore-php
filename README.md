@@ -23,6 +23,10 @@ echo $con->http_response;
 print $result->groups[0];
 ```
 
+##CONTRIBUTORS
+Thanks to @mal and @italiano40 for bug fix patches & PHP 5.2 cURL compatibility patches
+
+
 ###MIT LICENSE
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
