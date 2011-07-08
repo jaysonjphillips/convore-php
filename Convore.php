@@ -188,7 +188,7 @@
 		 * @return Object json
 		 **/
 		function getTopic($topic_id) {
-			return $this->methodCall('/topics/'.$topic_id.'.json', 'get', $params);
+			return $this->methodCall('/topics/'.$topic_id.'.json', 'get', null);
 		}
 		
 		/**
@@ -338,7 +338,9 @@
 			
 			if ($action == 'post') {
 				curl_setopt($ch, CURLOPT_POST, 1);
+		    	if(isset($params)){
 		    	curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
+		    	}
 			}
 			
 				$convore_data = curl_exec($ch);			
