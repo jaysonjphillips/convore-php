@@ -59,6 +59,14 @@
 			return $this->methodCall('/account/online.json', 'get');
 		}
 		
+		/**
+		 * Get a list of user's mentions
+		 * @return Object json
+		 **/
+		function getUserMentions() {
+			return $this->methodCall('account/mentions.json', 'get');
+		}
+		
 		// Groups methods
 		
 		/**
@@ -107,11 +115,11 @@
 		}
 		
 		/**
-		 * Join a private group
+		 * Request to join a private group
 		 * @param Integer $group_id
 		 * @return Object json
 		 **/
-		function joinPrivateGroup($group_id) {
+		function requestToJoinGroup($group_id) {
 			$params = array('group_id' => sprintf('%d', $group_id));
 			return $this->methodCall('/groups/'.$group_id.'/request.json', 'post', $params);
 			
@@ -180,6 +188,15 @@
 			return $this->methodCall('/groups/'.$group_id.'/topics/create.json', 'post', $params);
 		}
 		
+		/**
+		 * Track or mute a group	 
+		 * @param Integer $group_id 
+		 * @return Object json
+		 **/
+		function trackGroup($group_id) {
+			return $this->methodCall('/groups/'.$group_id.'/track.json', 'get');
+		}
+		
 		// Topics
 				
 		/**
@@ -189,6 +206,44 @@
 		 **/
 		function getTopic($topic_id) {
 			return $this->methodCall('/topics/'.$topic_id.'.json', 'get', null);
+		}
+		
+		/**
+		 * Delete a topic. You must be the creator of the topic or a group admin in order to delete the topic	 
+		 * @param Integer $topic_id 
+		 * @return Object json
+		 **/
+		function deleteTopic($topic_id) {
+			return $this->methodCall('/topics/'.$topic_id.'/delete.json', 'post');
+		}
+		
+		/**
+		 * Edit a topic. You must be the creator of the topic or a group admin in order to delete the topic	 
+		 * @param Integer $topic_id 
+		 * @param String  $name 
+		 * @return Object json
+		 **/
+		function editTopic($topic_id, $name) {
+			$params['name'] = sprintf('%s', $name);
+			return $this->methodCall('/topics/'.$topic_id.'/edit.json', 'post', $params);
+		}
+		
+		/**
+		 * Track or mute a topic	 
+		 * @param Integer $topic_id 
+		 * @return Object json
+		 **/
+		function trackTopic($topic_id) {
+			return $this->methodCall('/topics/'.$topic_id.'/track.json', 'get');
+		}
+		
+		/**
+		 * Mark all messages in a topic as read.	 
+		 * @param Integer $topic_id 
+		 * @return Object json
+		 **/
+		function markReadByTopic($topic_id) {
+			return $this->methodCall('/topics/'.$topic_id.'/mark_read.json', 'post');
 		}
 		
 		/**
@@ -207,6 +262,8 @@
 			return $this->methodCall('/topics/'.$topic_id.'/messages.json', 'get', $params);
 		}
 		
+		//  Messages
+		
 		/**
 		 * Post a new message	 
 		 * @param Integer $topic_id 
@@ -217,26 +274,6 @@
 			$params['message'] = sprintf('%s', $message);
 			return $this->methodCall('/topics/'.$topic_id.'/messages/create.json', 'post', $params);
 		}
-		
-		/**
-		 * Delete a topic. You must be the creator of the topic or a group admin in order to delete the topic	 
-		 * @param Integer $topic_id 
-		 * @return Object json
-		 **/
-		function deleteTopic($topic_id) {
-			return $this->methodCall('/topics/'.$topic_id.'/delete.json', 'post');
-		}
-		
-		/**
-		 * Mark all messages in a topic as read.	 
-		 * @param Integer $topic_id 
-		 * @return Object json
-		 **/
-		function markReadByTopic($topic_id) {
-			return $this->methodCall('/topics/'.$topic_id.'/mark_read.json', 'post');
-		}
-		
-		//  Messages
 		
 		/**
 		 * Star a message. If the message has already been starred by this user, this endpoint will then unstar the message
@@ -259,13 +296,77 @@
 		// Users
 		
 		/**
-		 * Get detailed information about the user.
+		 * Get detailed information about the user by user_id.
 		 * @param Integer $user_id
 		 * @return Object json
 		 **/
-		function getUser($user_id) {
+		function getUserById($user_id) {
 			return $this->methodCall('/users/'.$user_id.'.json', 'get');
 		}
+		
+		/**
+		 * Get detailed information about the user by username.
+		 * @param String $username
+		 * @return Object json
+		 **/
+		function getUserByName($username) {
+			return $this->methodCall('/users/'.$username.'.json', 'get');
+		}
+		
+		// Users - messages
+		
+		/**
+		 * Get direct messages for current user. Use until_id (optional) to paginate/get prior
+		 * @param Integer $until_id
+		 * @return Object json
+		 **/
+		function getDirectMessages($until_id = null) {
+			$params['until_id'] = $until_id;
+			return $this->methodCall('/users/messages.json', 'get', $params);
+		}
+		
+		/**
+		 * Get messages between specified user & current user. Use until_id (optional) to paginate/get prior
+		 * @param Integer $user_id
+		 * @param Integer $until_id
+		 * @return Object json
+		 **/
+		function getPrivateConversations($user_id, $until_id = null) {
+			$params['until_id'] = $until_id;
+			return $this->methodCall('/messages/'.$user_id.'.json', 'get', $params);
+		}
+		
+		/**
+		 * Create Direct Message
+		 * @param Integer $user_id
+		 * @param Integer $message
+		 * @return Object json
+		 **/
+		function createDirectMessage($user_id, $message) {
+			$params['message'] = sprintf('%s', $message);
+			return $this->methodCall('/messages/'.$user_id.'create.json', 'post', $params);
+		}
+		
+		/**
+		 * Star a direct message. 
+		 * @param Integer $message_id
+		 * @return Object json
+		 **/
+		function starDirectMessage($message_id) {
+			$params['message_id'] = $message_id;
+			return $this->methodCall('/messages/message/'.$message_id.'/star.json', 'post', $params);
+		}
+		
+		/**
+		 * Delete a direct message. 
+		 * @param Integer $message_id
+		 * @return Object json
+		 **/
+		function deleteDirectMessage($message_id) {
+			$params['message_id'] = $message_id;
+			return $this->methodCall('/messages/message/'.$message_id.'/delete.json', 'post', $params);
+		}
+		
 		
 		//  Group Discovery
 		
@@ -317,6 +418,14 @@
 		function discoverGroupsBySort($sort_by) {
 			$sort = sprintf('%s', $sort_by);
 			return $this->methodCall('groups/discover/explore/'.$sort.'.json', 'get');
+		}
+		
+		/**
+		 * Get list of groups with very recent activity
+		 * @return Object json
+		 **/
+		function discoverTrendingGroups() {
+			return $this->methodCall('groups/discover/trending.json', 'get');
 		}
 		
 		
