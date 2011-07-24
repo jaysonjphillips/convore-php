@@ -310,7 +310,7 @@
 		 * @return Object json
 		 **/
 		function getUserByName($username) {
-			return $this->methodCall('/users/'.$username.'.json', 'get');
+			return $this->methodCall('/users/username/'.$username.'.json', 'get');
 		}
 		
 		// Users - messages
