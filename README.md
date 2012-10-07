@@ -1,6 +1,6 @@
 #README
 
-Copyright (c) 2011 Jayson J. Phillips, Chronium Labs LLC
+Copyright (c) 2011 Jayson J. Phillips
 
 
 ##ABOUT CONVORE-PHP
