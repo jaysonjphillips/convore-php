@@ -4,6 +4,7 @@ Copyright (c) 2011 Jayson J. Phillips, Chronium Labs LLC
 
 
 ##ABOUT CONVORE-PHP
+*NOTE: This project is no longer active. convore.com has been shutdown.*  
 This class is a simple API wrapper to expose Convore (www.convore.com) methods. This class has no external dependencies and is aimed to be a lightweight drop-in for use in any project or frameworks. It is licensed under the MIT License which follows below.
 
 ##EXAMPLE
